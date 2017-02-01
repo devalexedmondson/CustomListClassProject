@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomListClassProject", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{40951111-4CFC-4FF8-AE3B-47D929146BAD}"
 EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "CustomList", "CustomList\CustomList.modelproj", "{A1A138D5-1155-49AA-9BA0-320CCEBB8583}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{40951111-4CFC-4FF8-AE3B-47D929146BAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40951111-4CFC-4FF8-AE3B-47D929146BAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40951111-4CFC-4FF8-AE3B-47D929146BAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1A138D5-1155-49AA-9BA0-320CCEBB8583}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1A138D5-1155-49AA-9BA0-320CCEBB8583}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1A138D5-1155-49AA-9BA0-320CCEBB8583}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1A138D5-1155-49AA-9BA0-320CCEBB8583}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
