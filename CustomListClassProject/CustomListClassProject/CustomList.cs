@@ -6,12 +6,35 @@ using System.Threading.Tasks;
 
 namespace CustomListClassProject
 {
-    public class CustomList<T>
+    public class MyList<T>
     {
-        T value;
-        public CustomList(T test)
+        public T[] objects;
+        private T[] blankArray = new T[0];
+        public int size;
+
+
+        public MyList()
         {
-            value = test;
+            objects = blankArray;
+        }
+        public MyList(int capacity)
+        {
+            if (capacity < 0)
+            {
+                //error
+            }
+            if (capacity == 0)
+            {
+                objects = blankArray;
+            }
+            else
+            {
+                objects = new T[capacity];
+            }
+        }
+        public void Add (T value)
+        {
+
         }
     }
 }

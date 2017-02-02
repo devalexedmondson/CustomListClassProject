@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace CustomListClassProject
 {
-    class Example
+    public class Example
     {
+        
         public Example()
         {
-
+            
         }
+       
     }
 }
