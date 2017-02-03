@@ -61,21 +61,21 @@ namespace UnitTestProject1
             //Assert
             Assert.AreEqual(list.size, 2);
         }
-        [TestMethod]
-        public void TestObjectNoLongerInLastIndex()
-        {
-            //Arrange
-            MyList<string> list = new MyList<string>();
-            list.Add("hi");
-            list.Add("bye");
-            list.Add("hello");
-            //Act
+        //[TestMethod]
+        //public void TestObjectNoLongerInLastIndex()
+        //{
+        //    //Arrange
+        //    MyList<string> list = new MyList<string>();
+        //    list.Add("hi");
+        //    list.Add("bye");
+        //    list.Add("hello");
+        //    //Act
 
-            list.Remove("hello");
+        //    list.Remove("hello");
 
-            //Assert
-            Assert.AreEqual(list.objects[2], null);
-        }
+        //    //Assert
+        //    Assert.AreEqual(list.objects[2], null);
+        //}
 
 
         //[TestMethod]

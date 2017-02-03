@@ -26,8 +26,9 @@ namespace CustomListClassProject
             MyList<string> car = new MyList<string>();
             car.Add("ford");
             car.Add("chevy");
+            car.Add("lambo");
             car.Add("mini");
-            car.Remove("mini");
+            car.Remove("ford");
             Console.ReadKey();
         }
     }

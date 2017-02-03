@@ -48,45 +48,27 @@ namespace CustomListClassProject
                 objects = tempArray;
             }
         }
-        public bool Remove(T value)
+        public  void Remove(T value)
         {
             if (objects.Length <= size)
             {
-                T[] tempArray = new T[size - 1];
-                for (int i = 0; i < size - 1; i++)
+                T[] tempArray = new T[size];
+                bool thing = true;
+                for (int i = 0; i < size; i++)
                 {
-                    tempArray[i] = objects[i];
+                    if (!objects[i].Equals(value) && thing)
+                    {
+                        tempArray[i] = objects[i];
+                    }
+                    else
+                    {
+                         thing = false;
+                        tempArray[i] = objects[i + 1];
+                    }
                 }
-                //tempArray[size] = value;
                 size--;
                 objects = tempArray;
-                return true;
             }
-            return false;
         }
-
-
-        //public bool Remove(T value)
-        //{
-        //    if (objects.Length <= size)
-        //    {
-        //        T[] tempArray = new T[size - 1];
-        //        for (int i = 0; i < size - 1; i++)
-        //        {
-        //            tempArray[i] = objects[i];
-
-        //        }
-        //        //tempArray[size - 1] = value;
-        //        size--;
-        //        objects = tempArray;
-        //        return true;
-        //    }
-        //    return false;
-        //}
-        //public void Count(T value)
-        //{
-
-        //}
-
     }
 }
