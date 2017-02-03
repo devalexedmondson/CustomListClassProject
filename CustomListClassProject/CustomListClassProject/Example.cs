@@ -13,6 +13,22 @@ namespace CustomListClassProject
         {
             
         }
-       
+        public void AddCars()
+        {
+            MyList<string> car = new MyList<string>();
+            car.Add("ford");
+            car.Add("chevy");
+            car.Add("mini");
+            Console.ReadKey();
+        }
+        public void RemoveCars()
+        {
+            MyList<string> car = new MyList<string>();
+            car.Add("ford");
+            car.Add("chevy");
+            car.Add("mini");
+            car.Remove("mini");
+            Console.ReadKey();
+        }
     }
 }

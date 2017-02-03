@@ -10,6 +10,11 @@ namespace CustomListClassProject
     {
         static void Main(string[] args)
         {
+            Example example = new Example();
+            //example.AddCars();
+            example.RemoveCars();
+            Console.ReadKey();
+
         }
     }
 }

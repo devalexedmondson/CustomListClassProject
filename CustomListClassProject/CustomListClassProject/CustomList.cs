@@ -16,6 +16,8 @@ namespace CustomListClassProject
         public MyList()
         {
             objects = blankArray;
+            size = 0;
+            
         }
         public MyList(int capacity)
         {
@@ -34,7 +36,36 @@ namespace CustomListClassProject
         }
         public void Add (T value)
         {
-
+            if (objects.Length <= size)
+            {
+                T[] tempArray = new T[size + 1];
+                for (int i = 0; i < size; i++)
+                {
+                    tempArray[i] = objects[i];
+                }
+                tempArray[size] = value;
+                size++;
+                objects = tempArray;
+            }
         }
+        public void Remove(T value)
+        {
+            if (objects.Length <= size)
+            {
+                T[] tempArray = new T[size - 1];
+                for (int i = 0; i < size; i++)
+                {
+                    objects[i] = tempArray[i];
+                }
+                tempArray[size] = value;
+                size--;
+                objects = tempArray;
+            }
+        }
+        //public void Count(T value)
+        //{
+
+        //}
+
     }
 }

@@ -8,55 +8,97 @@ namespace UnitTestProject1
     public class CustomListClassProject
     {
         [TestMethod]
-        public void TestListNoObjects()
-        {// check length is 0
+        public void TestAddOneObject()
+        {
             //Arrange
-            MyList<int> add = new MyList<int>();
+            MyList<int> list = new MyList<int>();
 
             //Act
-            add.Add(0);
+            list.Add(1);
 
             //Assert
-            Assert.AreEqual(add.objects.Length, 0);
+            Assert.AreEqual(list.size, 1);
         }
         [TestMethod]
-        public void TestListLengthIncreasedByOne()
-        {//increase length of the array by one
+        public void TestAddMultipleObjects()
+        {
             //Arrange
-            MyList<int> add = new MyList<int>();
+            MyList<string> list = new MyList<string>();
 
             //Act
-            add.Add(1);
+            list.Add("hi");
+            list.Add("bye");
+            list.Add("hello");
 
             //Assert
-            Assert.AreEqual(add.objects.Length, 1);
+            Assert.AreEqual(list.size, 3);
         }
-        //[TestMethod]
-        //public void TestAddToSpotOnArray()
-        //{//increase length of the array
-        //    //Arrange
-        //    MyList<int> add = new MyList<int>();
-        //    //Act
-        //    add.Add[0](1);
+        [TestMethod]
+        public void TestIndexOnArray()
+        {
+            //Arrange
+            MyList<string> list = new MyList<string>();
+            //Act
+            list.Add("hi");
+            list.Add("bye");
+            list.Add("hello");
 
-        //    //Assert
-        //    Assert.AreEqual(add.objects.IndexOf(objects, 0), 2);
-        //}
-        
+            //Assert
+            Assert.AreEqual( list.objects[1] , "bye");
+        }
+        [TestMethod]
+        public void TestRemoveLastIndex()
+        {
+            //Arrange
+            MyList<string> list = new MyList<string>();
+            list.Add("hi");
+            list.Add("bye");
+            list.Add("hello");
+            //Act
+
+            list.Remove("hello");
+
+            //Assert
+            Assert.AreEqual(list.size, 2);
+        }
+        [TestMethod]
+        public void TestObjectNoLongerInLastIndex()
+        {
+            //Arrange
+            MyList<string> list = new MyList<string>();
+            list.Add("hi");
+            list.Add("bye");
+            list.Add("hello");
+            //Act
+
+            list.Remove("hello");
+
+            //Assert
+            Assert.AreEqual(list.objects[2], null);
+        }
+
+
         //[TestMethod]
-        //public void TestRemove()
+        //public void TestRemoveFirstIndex()
         //{
         //    //Arrange
-        //    CustomList<T> remove = new CustomList<T>
-
+        //    MyList<string> list = new MyList<string>();
+        //    list.Add("hi");
+        //    list.Add("bye");
+        //    list.Add("hello");
         //    //Act
-        //    remove.Remove()
+
+        //    list.Remove("hi");
 
         //    //Assert
-        //    Assert.AreEqual(,);
+        //    Assert.AreEqual(list.size, 2);
         //}
+
+        //TODO: make test to make sure that the value removed is no longer there
+
+
         //[TestMethod]
-        //public void TestOverride()
+        //public void TestCount()
         //{
         //    //Arrange
         //    CustomList<T> overide = new CustomList<T>
