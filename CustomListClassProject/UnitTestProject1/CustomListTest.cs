@@ -2,7 +2,7 @@
 using CustomListClassProject;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace UnitTestProject1
+namespace CustomListTest
 {
     [TestClass]
     public class CustomListClassProject

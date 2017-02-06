@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace CustomListClassProject
 {
-    public class MyList<T>
+    public class MyList<T> : IEnumerable
     {
         public T[] objects;
         private T[] blankArray = new T[0];
         public int size;
 
-
+        
         public MyList()
         {
             objects = blankArray;
@@ -34,6 +35,14 @@ namespace CustomListClassProject
                 objects = new T[capacity];
             }
         }
+        public IEnumerator GetEnumerator()
+        {
+            for(int i = 0; i < objects.Length; i++)
+            {
+                yield return objects[i];
+            }
+            
+        }
         public void Add (T value)
         {
             if (objects.Length <= size)
@@ -52,17 +61,17 @@ namespace CustomListClassProject
         {
             if (objects.Length <= size)
             {
-                T[] tempArray = new T[size];
-                bool thing = true;
+                T[] tempArray = new T[size - 1];
+                bool placeHolder = true;
                 for (int i = 0; i < size; i++)
                 {
-                    if (!objects[i].Equals(value) && thing)
+                    if (!objects[i].Equals(value) && placeHolder)
                     {
                         tempArray[i] = objects[i];
                     }
-                    else
+                    else if (i != size - 1)
                     {
-                         thing = false;
+                        placeHolder = false;
                         tempArray[i] = objects[i + 1];
                     }
                 }
