@@ -83,11 +83,34 @@ namespace CustomListClassProject
 
         }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         //public static MyList<T> operator+(MyList<T> x, MyList<T> y)
         //{
         //    MyList<T> list = new MyList<T>();
         //    list.Add = x.Add + y.Add;
         //    return list;
+        //}
+        //public void Count()
+        //{
+        //    /*1. Get the .Length of the objects array
+        //      2. convert the answer, ToString();
+        //    */
         //}
     }
 }

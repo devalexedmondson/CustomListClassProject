@@ -75,17 +75,15 @@ namespace CustomListTest
             Assert.AreEqual(list.objects[0], "bye");
         }
         [TestMethod]
-        public void TestLengthOfArrayEqualsSizeOfList()
+        public void TestOverrideToStringMethod()
         {
             //Arrange
-            MyList<string> list = new MyList<string>();
-            list.Add("Alex");
-            list.Add("Quinn");
-            list.Add("Olivia");
+            MyList<int> list = new MyList<int>();
+            list.Add(34);
             //Act
-            list.Count();
+            list.ToString();
             //Assert
-            Assert.AreEqual(list.size, 3);
+            Assert.AreEqual(list.objects[0], "34");
         }
 
 
@@ -106,19 +104,21 @@ namespace CustomListTest
 
 
 
+
+
         //[TestMethod]
-        //public void TestOverrideToStringMethod()
+        //public void TestLengthOfArrayEqualsSizeOfList()
         //{
         //    //Arrange
-        //    MyList<int> list = new MyList<int>();
-        //    list.Add(34);
-        //    list.Add(20);
+        //    MyList<string> list = new MyList<string>();
+        //    list.Add("Alex");
+        //    list.Add("Quinn");
+        //    list.Add("Olivia");
         //    //Act
-        //    list.ToString("");
+        //    list.Count();
         //    //Assert
-        //    Assert.AreEqual(list.objects[0], "bye");
+        //    Assert.AreEqual(list.size, 3);
         //}
-
 
 
     }
