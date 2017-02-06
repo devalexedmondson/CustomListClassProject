@@ -78,10 +78,17 @@ namespace CustomListClassProject
                 objects = tempArray;
             }
         }
-        public new virtual void ToString()
-        {
+        //public override string ToString()
+        //{
 
+        //    return objects[i].ToString();
+        //}
+
+        public int Count()
+        {
+            return size;
         }
+
 
 
 
@@ -106,11 +113,6 @@ namespace CustomListClassProject
         //    list.Add = x.Add + y.Add;
         //    return list;
         //}
-        //public void Count()
-        //{
-        //    /*1. Get the .Length of the objects array
-        //      2. convert the answer, ToString();
-        //    */
-        //}
+
     }
 }
