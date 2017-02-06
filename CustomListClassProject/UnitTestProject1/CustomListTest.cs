@@ -61,53 +61,65 @@ namespace CustomListTest
             //Assert
             Assert.AreEqual(list.size, 2);
         }
+        [TestMethod]
+        public void TestRemoveFirstIndex()
+        {
+            //Arrange
+            MyList<string> list = new MyList<string>();
+            list.Add("hi");
+            list.Add("bye");
+            list.Add("hello");
+            //Act
+            list.Remove("hi");
+            //Assert
+            Assert.AreEqual(list.objects[0], "bye");
+        }
+        [TestMethod]
+        public void TestLengthOfArrayEqualsSizeOfList()
+        {
+            //Arrange
+            MyList<string> list = new MyList<string>();
+            list.Add("Alex");
+            list.Add("Quinn");
+            list.Add("Olivia");
+            //Act
+            list.Count();
+            //Assert
+            Assert.AreEqual(list.size, 3);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         //[TestMethod]
-        //public void TestObjectNoLongerInLastIndex()
+        //public void TestOverrideToStringMethod()
         //{
         //    //Arrange
-        //    MyList<string> list = new MyList<string>();
-        //    list.Add("hi");
-        //    list.Add("bye");
-        //    list.Add("hello");
+        //    MyList<int> list = new MyList<int>();
+        //    list.Add(34);
+        //    list.Add(20);
         //    //Act
-
-        //    list.Remove("hello");
-
+        //    list.ToString("");
         //    //Assert
-        //    Assert.AreEqual(list.objects[2], null);
+        //    Assert.AreEqual(list.objects[0], "bye");
         //}
 
 
-        //[TestMethod]
-        //public void TestRemoveFirstIndex()
-        //{
-        //    //Arrange
-        //    MyList<string> list = new MyList<string>();
-        //    list.Add("hi");
-        //    list.Add("bye");
-        //    list.Add("hello");
-        //    //Act
 
-        //    list.Remove("hi");
-
-        //    //Assert
-        //    Assert.AreEqual(list.size, 2);
-        //}
-
-        //TODO: make test to make sure that the value removed is no longer there
-
-
-        //[TestMethod]
-        //public void TestCount()
-        //{
-        //    //Arrange
-        //    CustomList<T> overide = new CustomList<T>
-
-        //    //Act
-        //    overide.Override()
-
-        //    //Assert
-        //    Assert.AreEqual(,);
-        //}
     }
 }

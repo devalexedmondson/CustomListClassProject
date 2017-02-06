@@ -40,8 +40,7 @@ namespace CustomListClassProject
             for(int i = 0; i < objects.Length; i++)
             {
                 yield return objects[i];
-            }
-            
+            } 
         }
         public void Add (T value)
         {
@@ -79,5 +78,16 @@ namespace CustomListClassProject
                 objects = tempArray;
             }
         }
+        public new virtual void ToString()
+        {
+
+        }
+
+        //public static MyList<T> operator+(MyList<T> x, MyList<T> y)
+        //{
+        //    MyList<T> list = new MyList<T>();
+        //    list.Add = x.Add + y.Add;
+        //    return list;
+        //}
     }
 }
