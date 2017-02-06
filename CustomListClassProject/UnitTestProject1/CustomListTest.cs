@@ -75,17 +75,6 @@ namespace CustomListTest
             Assert.AreEqual(list.objects[0], "bye");
         }
         [TestMethod]
-        public void TestToStringMethod()
-        {
-            //Arrange
-            MyList<int> list = new MyList<int>();
-            list.Add(34);
-            //Act
-            string result = list.ToString();
-            //Assert
-            Assert.AreEqual(result, "34");
-        }
-        [TestMethod]
         public void TestLengthOfArrayEqualsSizeOfList()
         {
             //Arrange
@@ -98,7 +87,28 @@ namespace CustomListTest
             //Assert
             Assert.AreEqual(result , 3);
         }
-
-
+        [TestMethod]
+        public void TestOverloadingPlusOperator()
+        {
+            //Arrange
+            MyList<string> list = new MyList<string>() {"hi", "hello"};
+            MyList<string> otherList = new MyList<string> {"bye", "goodbye"};
+           
+            //Act
+            string result = new MyList<string>(list + otherList);
+            //Assert
+            Assert.AreEqual(result, "hi, hello, bye, goodbye");
+        }
+        [TestMethod]
+        public void TestToStringMethod()
+        {
+            //Arrange
+            MyList<int> list = new MyList<int>();
+            list.Add(34);
+            //Act
+            string result = list.ToString();
+            //Assert
+            Assert.AreEqual(result, "34");
+        }
     }
 }

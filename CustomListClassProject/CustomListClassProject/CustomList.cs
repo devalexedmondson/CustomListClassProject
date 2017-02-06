@@ -78,15 +78,18 @@ namespace CustomListClassProject
                 objects = tempArray;
             }
         }
-        //public override string ToString()
-        //{
-
-        //    return objects[i].ToString();
-        //}
-
         public int Count()
         {
             return size;
+        }
+        public static MyList<T> operator+ (MyList<T> listA, MyList<T> listB)
+        {
+            MyList<T> list = new MyList<T>();
+
+            //loop through and add items from each list to the new list 
+           
+            list.Add(listA, listB);
+            return new MyList<T>();
         }
 
 
@@ -98,21 +101,14 @@ namespace CustomListClassProject
 
 
 
-
-
-
-
-
-
-
-
-
-        //public static MyList<T> operator+(MyList<T> x, MyList<T> y)
+        //public override string ToString()
         //{
-        //    MyList<T> list = new MyList<T>();
-        //    list.Add = x.Add + y.Add;
-        //    return list;
+        //    string value;
+        //    for(int i = 0; i < size; i ++)
+        //    {
+        //      string value = objects[i].ToString();
+        //    }
+        //    return value;
         //}
-
     }
 }
