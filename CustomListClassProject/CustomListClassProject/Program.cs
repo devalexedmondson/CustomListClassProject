@@ -15,6 +15,13 @@ namespace CustomListClassProject
             example.RemoveCars();
             Console.ReadKey();
 
+            List<int> list = new List<int>();
+            list.Add(4);
+            foreach(int x in list)
+            {
+                Console.WriteLine(x);
+            }
+
         }
     }
 }

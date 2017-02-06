@@ -88,16 +88,20 @@ namespace CustomListTest
             Assert.AreEqual(result , 3);
         }
         [TestMethod]
-        public void TestOverloadingPlusOperator()
-        {
+        public void TestOverloadingPlusOperator() 
+        {//create loop that starts true and matches up with each variable and will turn false if they do not match up.
             //Arrange
-            MyList<string> list = new MyList<string>() {"hi", "hello"};
-            MyList<string> otherList = new MyList<string> {"bye", "goodbye"};
-           
+            MyList<string> list = new MyList<string>();
+            MyList<string> actualResult = new MyList<string>() { "hi", "hello", "bye", "goodbye" };
+            list.Add("hi");
+            list.Add("hello");
+            MyList<string> otherList = new MyList<string>();
+            otherList.Add("bye");
+            otherList.Add("goodbye");
             //Act
-            string result = new MyList<string>(list + otherList);
+            MyList<string> result = (list + otherList);
             //Assert
-            Assert.AreEqual(result, "hi, hello, bye, goodbye");
+            Assert.AreEqual(result, actualResult);
         }
         [TestMethod]
         public void TestToStringMethod()

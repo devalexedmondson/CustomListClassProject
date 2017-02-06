@@ -11,7 +11,7 @@ namespace CustomListClassProject
     {
         public T[] objects;
         private T[] blankArray = new T[0];
-        public int size;
+        public int size { get; private set; }
 
         
         public MyList()
@@ -85,13 +85,16 @@ namespace CustomListClassProject
         public static MyList<T> operator+ (MyList<T> listA, MyList<T> listB)
         {
             MyList<T> list = new MyList<T>();
-
-            //loop through and add items from each list to the new list 
-           
-            list.Add(listA, listB);
-            return new MyList<T>();
+            foreach(T item in listA)
+            {
+                list.Add(item);
+            }
+            foreach(T item in listB)
+            {
+                list.Add(item);
+            }
+            return list;
         }
-
 
 
 
