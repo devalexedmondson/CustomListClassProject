@@ -78,9 +78,13 @@ namespace CustomListClassProject
                 objects = tempArray;
             }
         }
-        public int Count()
+        public int Count
         {
-            return size;
+            get
+            {
+                return size;
+            }
+            
         }
         public static MyList<T> operator+ (MyList<T> listA, MyList<T> listB)
         {
@@ -95,7 +99,19 @@ namespace CustomListClassProject
             }
             return list;
         }
-
+        public static MyList<T> operator -(MyList<T> listA, MyList<T> listB)
+        {
+            MyList<T> list = new MyList<T>();
+            foreach (T item in listA)
+            {
+                list.Remove(item);
+            }
+            foreach (T item in listB)
+            {
+                list.Remove(item);
+            }
+            return list;
+        }
 
 
 

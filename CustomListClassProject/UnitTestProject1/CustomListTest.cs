@@ -88,8 +88,9 @@ namespace CustomListTest
             Assert.AreEqual(result , 3);
         }
         [TestMethod]
-        public void TestOverloadingPlusOperator() 
+        public void TestOverloadingPlusOperator()
         {//create loop that starts true and matches up with each variable and will turn false if they do not match up.
+
             //Arrange
             MyList<string> list = new MyList<string>();
             MyList<string> actualResult = new MyList<string>() { "hi", "hello", "bye", "goodbye" };
@@ -98,11 +99,27 @@ namespace CustomListTest
             MyList<string> otherList = new MyList<string>();
             otherList.Add("bye");
             otherList.Add("goodbye");
+
+            bool placeHolder = true;
+            for (int i = 0; i < list.size; i++)
+            {
+                if(!list.objects[i].Equals(otherList) && placeHolder)
+                {
+
+                }
+                else
+                {
+                    placeHolder = false;
+                }
+            }
+
             //Act
             MyList<string> result = (list + otherList);
             //Assert
             Assert.AreEqual(result, actualResult);
         }
+
+
         [TestMethod]
         public void TestToStringMethod()
         {

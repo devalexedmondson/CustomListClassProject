@@ -29,8 +29,7 @@ namespace CustomListClassProject
             car.Add("lambo");
             car.Add("mini");
             car.Remove("chevy");
-            car.Count();
-            Console.WriteLine($"You have {car.Count()} cars!");
+            Console.WriteLine($"You have {car.Count} cars!");
             Console.ReadKey();
         }
     }
