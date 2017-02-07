@@ -12,19 +12,17 @@ namespace CustomListClassProject
         public T[] objects;
         private T[] blankArray = new T[0];
         public int size { get; private set; }
-
         
         public MyList()
         {
             objects = blankArray;
             size = 0;
-            
         }
         public MyList(int capacity)
         {
             if (capacity < 0)
             {
-                
+                //error
             }
             if (capacity == 0)
             {
@@ -85,7 +83,7 @@ namespace CustomListClassProject
                 return size;
             }
         }
-        public static MyList<T> operator+ (MyList<T> listA, MyList<T> listB)
+        public static MyList<T> operator +(MyList<T> listA, MyList<T> listB)
         {
             MyList<T> list = new MyList<T>();
             foreach(T item in listA)
@@ -130,20 +128,5 @@ namespace CustomListClassProject
             }
             return list;
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }

@@ -8,33 +8,29 @@ namespace CustomListTest
     public class CustomListClassProject
     {
         [TestMethod]
-        public void TestAddOneObject()
+        public void Add_OneObject_ToList()
         {
             //Arrange
             MyList<int> list = new MyList<int>();
-
             //Act
             list.Add(1);
-
             //Assert
             Assert.AreEqual(list.size, 1);
         }
         [TestMethod]
-        public void TestAddMultipleObjects()
+        public void Add_MultipleObjects_ToList()
         {
             //Arrange
             MyList<string> list = new MyList<string>();
-
             //Act
             list.Add("hi");
             list.Add("bye");
             list.Add("hello");
-
             //Assert
             Assert.AreEqual(list.size, 3);
         }
         [TestMethod]
-        public void TestIndexOnArray()
+        public void Add_Objects_ToCorrectIndex()
         {
             //Arrange
             MyList<string> list = new MyList<string>();
@@ -42,12 +38,11 @@ namespace CustomListTest
             list.Add("hi");
             list.Add("bye");
             list.Add("hello");
-
             //Assert
             Assert.AreEqual( list.objects[1] , "bye");
         }
         [TestMethod]
-        public void TestRemoveLastIndex()
+        public void Remove_Object_FromList()
         {
             //Arrange
             MyList<string> list = new MyList<string>();
@@ -55,9 +50,7 @@ namespace CustomListTest
             list.Add("bye");
             list.Add("hello");
             //Act
-
             list.Remove("hello");
-
             //Assert
             Assert.AreEqual(list.size, 2);
         }
@@ -75,22 +68,20 @@ namespace CustomListTest
             Assert.AreEqual(list.objects[0], "bye");
         }
         [TestMethod]
-        public void TestLengthOfArrayEqualsSizeOfList()
+        public void Test_ListCount_EqualsActualCount()
         {
             //Arrange
             MyList<string> list = new MyList<string>();
             list.Add("Alex");
             list.Add("Quinn");
             list.Add("Olivia");
-
             //Act
             int result = list.Count;
-
             //Assert
             Assert.AreEqual(result , 3);
         }
         [TestMethod]
-        public void TestOverloadingPlusOperator()
+        public void Test_Overloading_PlusOperator()
         {
             //Arrange
             MyList<string> list = new MyList<string>();
@@ -100,7 +91,6 @@ namespace CustomListTest
             MyList<string> secondList = new MyList<string>();
             secondList.Add("bye");
             secondList.Add("goodbye");
-
             bool compare = true;
             for (int i = 0; i < list.size; i++)
             {
@@ -109,36 +99,30 @@ namespace CustomListTest
                     compare = false;
                 }
             }
-
             //Act
             MyList<string> result = (list + secondList);
-
             //Assert
             Assert.IsTrue(compare);
         }
         [TestMethod]
-        public void TestToStringMethod()
+        public void Convert_DataTypes_ToString()
         {
             //Arrange
             MyList<int> list = new MyList<int>();
             list.Add(34);
-
             //Act
             string result = list.ToString();
-
             //Assert
             Assert.AreEqual(result, "34");
         }
         [TestMethod]
-        public void TestZipMethod()
+        public void Zip_Lists_ReturnZippedList()
         {
             //Arrange
             MyList<string> list = new MyList<string>() { "hi", "hello" };
             MyList<string> secondList = new MyList<string>() { "bye", "goodbye" };
             MyList<string> actualResult = new MyList<string>() { "hi", "bye","hello","goodbye" };
-           
             //Act
-
             MyList<string> result = list.Zip(list, secondList);
             bool compare = true;
             for (int i = 0; i < list.size; i++)
@@ -151,28 +135,26 @@ namespace CustomListTest
             //Assert
             Assert.IsTrue(compare);
         }
-        //[TestMethod]
-        //public void TestOverloadingSubtractionOperator()
-        //{
-        //    //Arrange
-        //    MyList<string> list = new MyList<string>() { "hi", "hello" };
-        //    MyList<string> secondList = new MyList<string>() { "bye", "goodbye" };
-        //    MyList<string> actualResult = new MyList<string>() { "hi", "hello" };
-        //    MyList<string> combinedList = (list + secondList);
-        //    bool compare = true;
-        //    for (int i = 0; i < list.size; i++)
-        //    {
-        //        if (list.objects[i] != actualResult.objects[i])
-        //        {
-        //            compare = false;
-        //        }
-        //    }
-        //    //Act
-
-        //    MyList<string> result = (combinedList - secondList);
-
-        //    //Assert
-        //    Assert.IsTrue(compare);
-        //}
+        [TestMethod]
+        public void Test_Overloading_SubtractionOperator()
+        {
+            //Arrange
+            MyList<string> list = new MyList<string>() { "hi", "hello" };
+            MyList<string> secondList = new MyList<string>() { "bye", "goodbye" };
+            MyList<string> actualResult = new MyList<string>() { "hi", "hello" };
+            MyList<string> combinedList = (list + secondList);
+            bool compare = true;
+            for (int i = 0; i < list.size; i++)
+            {
+                if (list.objects[i] != actualResult.objects[i])
+                {
+                    compare = false;
+                }
+            }
+            //Act
+            MyList<string> result = (combinedList - secondList);
+            //Assert
+            Assert.IsTrue(compare);
+        }
     }
 }
