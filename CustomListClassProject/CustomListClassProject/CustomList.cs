@@ -9,13 +9,11 @@ namespace CustomListClassProject
 {
     public class MyList<T> : IEnumerable
     {
-        public T[] objects;
-        private T[] blankArray = new T[0];
+        public T[] objects = new T[0];
         public int size { get; private set; }
         
         public MyList()
         {
-            objects = blankArray;
             size = 0;
         }
         public MyList(int capacity)
@@ -23,10 +21,6 @@ namespace CustomListClassProject
             if (capacity < 0)
             {
                 //error
-            }
-            if (capacity == 0)
-            {
-                objects = blankArray;
             }
             else
             {
@@ -52,6 +46,17 @@ namespace CustomListClassProject
                 tempArray[size] = value;
                 size++;
                 objects = tempArray;
+            }
+            else
+            {
+                try
+                {
+                    //no try
+                }
+                catch(ArgumentOutOfRangeException e)
+                {
+                    Console.WriteLine(e);
+                }
             }
         }
         public  void Remove(T value)
