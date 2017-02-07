@@ -99,18 +99,17 @@ namespace CustomListClassProject
             }
             return list;
         }
-        public static MyList<T> operator -(MyList<T> listA, MyList<T> listB)
+        public override string ToString()
         {
-            MyList<T> list = new MyList<T>();
-            foreach (T item in listA)
+            //create empty string 
+            //foreach object in old array, convert that to a string
+            //return the new string
+            string value = "";
+            for(int i = 0; i < size; i++)
             {
-                list.Remove(item);
+                value = objects[i].ToString();
             }
-            foreach (T item in listB)
-            {
-                list.Remove(item);
-            }
-            return list;
+            return value;
         }
 
 
@@ -120,14 +119,28 @@ namespace CustomListClassProject
 
 
 
-        //public override string ToString()
+
+
+
+
+
+
+
+
+
+
+        //public static MyList<T> operator -(MyList<T> listA, MyList<T> listB)
         //{
-        //    string value;
-        //    for(int i = 0; i < size; i ++)
+        //    MyList<T> list = new MyList<T>();
+        //    foreach (T item in listA)
         //    {
-        //      string value = objects[i].ToString();
+        //        list.Remove(item);
         //    }
-        //    return value;
+        //    foreach (T item in listB)
+        //    {
+        //        list.Remove(item);
+        //    }
+        //    return list;
         //}
     }
 }

@@ -83,7 +83,7 @@ namespace CustomListTest
             list.Add("Quinn");
             list.Add("Olivia");
             //Act
-            int result = list.Count();
+            int result = list.Count;
             //Assert
             Assert.AreEqual(result , 3);
         }
@@ -100,26 +100,19 @@ namespace CustomListTest
             otherList.Add("bye");
             otherList.Add("goodbye");
 
-            bool placeHolder = true;
+            bool compare = true;
             for (int i = 0; i < list.size; i++)
             {
-                if(!list.objects[i].Equals(otherList) && placeHolder)
+                if(list.objects[i] != actualResult.objects[i])
                 {
-
-                }
-                else
-                {
-                    placeHolder = false;
+                    compare = false;
                 }
             }
-
             //Act
             MyList<string> result = (list + otherList);
             //Assert
-            Assert.AreEqual(result, actualResult);
+            Assert.IsTrue(compare);
         }
-
-
         [TestMethod]
         public void TestToStringMethod()
         {
