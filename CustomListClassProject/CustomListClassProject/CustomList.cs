@@ -24,7 +24,7 @@ namespace CustomListClassProject
         {
             if (capacity < 0)
             {
-                //error
+                
             }
             if (capacity == 0)
             {
@@ -84,7 +84,6 @@ namespace CustomListClassProject
             {
                 return size;
             }
-            
         }
         public static MyList<T> operator+ (MyList<T> listA, MyList<T> listB)
         {
@@ -101,15 +100,35 @@ namespace CustomListClassProject
         }
         public override string ToString()
         {
-            //create empty string 
-            //foreach object in old array, convert that to a string
-            //return the new string
             string value = "";
-            for(int i = 0; i < size; i++)
+            for (int i = 0; i < size; i++)
             {
                 value = objects[i].ToString();
             }
             return value;
+        }
+        public MyList<T> Zip (MyList<T> listA, MyList<T> listB)
+        {
+            MyList<T> list = new MyList<T>();
+            for (int i = 0; i < size; i++)
+            {
+                list.Add(listA.objects[i]);
+                list.Add(listB.objects[i]);
+            }
+            return list;
+        }
+        public static MyList<T> operator -(MyList<T> listA, MyList<T> listB)
+        {
+            MyList<T> list = new MyList<T>();
+            foreach (T item in listA)
+            {
+                list.Remove(item);
+            }
+            foreach (T item in listB)
+            {
+                list.Remove(item);
+            }
+            return list;
         }
 
 
@@ -126,21 +145,5 @@ namespace CustomListClassProject
 
 
 
-
-
-
-        //public static MyList<T> operator -(MyList<T> listA, MyList<T> listB)
-        //{
-        //    MyList<T> list = new MyList<T>();
-        //    foreach (T item in listA)
-        //    {
-        //        list.Remove(item);
-        //    }
-        //    foreach (T item in listB)
-        //    {
-        //        list.Remove(item);
-        //    }
-        //    return list;
-        //}
     }
 }

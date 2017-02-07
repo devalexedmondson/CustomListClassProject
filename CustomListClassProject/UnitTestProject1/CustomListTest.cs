@@ -82,23 +82,24 @@ namespace CustomListTest
             list.Add("Alex");
             list.Add("Quinn");
             list.Add("Olivia");
+
             //Act
             int result = list.Count;
+
             //Assert
             Assert.AreEqual(result , 3);
         }
         [TestMethod]
         public void TestOverloadingPlusOperator()
-        {//create loop that starts true and matches up with each variable and will turn false if they do not match up.
-
+        {
             //Arrange
             MyList<string> list = new MyList<string>();
             MyList<string> actualResult = new MyList<string>() { "hi", "hello", "bye", "goodbye" };
             list.Add("hi");
             list.Add("hello");
-            MyList<string> otherList = new MyList<string>();
-            otherList.Add("bye");
-            otherList.Add("goodbye");
+            MyList<string> secondList = new MyList<string>();
+            secondList.Add("bye");
+            secondList.Add("goodbye");
 
             bool compare = true;
             for (int i = 0; i < list.size; i++)
@@ -108,8 +109,10 @@ namespace CustomListTest
                     compare = false;
                 }
             }
+
             //Act
-            MyList<string> result = (list + otherList);
+            MyList<string> result = (list + secondList);
+
             //Assert
             Assert.IsTrue(compare);
         }
@@ -119,10 +122,57 @@ namespace CustomListTest
             //Arrange
             MyList<int> list = new MyList<int>();
             list.Add(34);
+
             //Act
             string result = list.ToString();
+
             //Assert
             Assert.AreEqual(result, "34");
         }
+        [TestMethod]
+        public void TestZipMethod()
+        {
+            //Arrange
+            MyList<string> list = new MyList<string>() { "hi", "hello" };
+            MyList<string> secondList = new MyList<string>() { "bye", "goodbye" };
+            MyList<string> actualResult = new MyList<string>() { "hi", "bye","hello","goodbye" };
+           
+            //Act
+
+            MyList<string> result = list.Zip(list, secondList);
+            bool compare = true;
+            for (int i = 0; i < list.size; i++)
+            {
+                if (result.objects[i] != actualResult.objects[i])
+                {
+                    compare = false;
+                }
+            }
+            //Assert
+            Assert.IsTrue(compare);
+        }
+        //[TestMethod]
+        //public void TestOverloadingSubtractionOperator()
+        //{
+        //    //Arrange
+        //    MyList<string> list = new MyList<string>() { "hi", "hello" };
+        //    MyList<string> secondList = new MyList<string>() { "bye", "goodbye" };
+        //    MyList<string> actualResult = new MyList<string>() { "hi", "hello" };
+        //    MyList<string> combinedList = (list + secondList);
+        //    bool compare = true;
+        //    for (int i = 0; i < list.size; i++)
+        //    {
+        //        if (list.objects[i] != actualResult.objects[i])
+        //        {
+        //            compare = false;
+        //        }
+        //    }
+        //    //Act
+
+        //    MyList<string> result = (combinedList - secondList);
+
+        //    //Assert
+        //    Assert.IsTrue(compare);
+        //}
     }
 }
